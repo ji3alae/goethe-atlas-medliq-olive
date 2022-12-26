@@ -7,7 +7,7 @@ export class SynchDirective {
   constructor(private el: ElementRef) {}
   @HostListener('click')
   prevFunc() {
-    const slideElements = document.querySelectorAll('.slide-item-v');
+    const slideElements = document.querySelectorAll('.slide-item-v.active');
     slideElements.forEach((elem) => {
       elem.classList.remove('active');
     });
