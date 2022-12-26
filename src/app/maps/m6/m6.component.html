@@ -1,0 +1,86 @@
+<app-seclayout  (info)='info = $event; sample = $event ? null : sample' [hideHeader]='!!sample'>
+  <div class='map content'>
+      <app-info [class.open]='!!info' (close)='info = false'></app-info>
+      <div class="product slide-content">
+        <div class="slider-wrap">
+          <div class="slider-main">
+            <div class="slide-item item" *ngFor='let image of pics ; let i = index' [attr.data-index]="i">
+              <figure [class.portrait]=image.newClass>
+                  <img alt="" [src]=image.url>
+              </figure>
+            </div>
+          </div>
+          <div class="button-area">
+            <button type="button" class="prev" appPrev><</button>
+            <button type="button" class="next" appNext>></button>
+          </div>
+        </div>
+      </div>
+      <div class="btn-model open">
+          <span class="">
+          </span>
+      </div>
+      <div class="model open">
+          <div class="model-content">
+              <div class='maps-content'>
+                  <div class=the_map #mapEl></div>
+              </div>
+              <div *ngIf="sample" class="text-content">
+                <h2 class="title" *ngIf="sample">{{title}}</h2>
+                <div class="desc" [innerHtml]='marked(description || "")'></div>
+                <!-- <div *ngIf="accordion" class="accordion-content">
+                    <dl *ngFor="let acc of accordion" class="accordion" >
+                          <dt appAccordion>
+                              <h3 class="acc-title">{{acc[0]}}</h3>
+                          </dt>
+                          <dd class="acc-disc" [innerHtml]='marked(acc[1] || "")'></dd>
+                    </dl>
+                </div> -->
+            </div>
+            <div *ngIf='name !== "Rabat"' class="cashe">
+              <div   class="carousel thumbnail-slick" *ngFor='let groupe of images; let g = index ; let isFirst = first' [class.active]="isFirst" [attr.data-index]="g" >
+                <div class="slide-item slide-item-v" *ngFor='let image of groupe ; let i = index ; let isFirst = first ' [attr.data-index]="i">
+                  <figure >
+                      <img alt="" [src]=image.url [attr.data-index]="i+(4*g)" appSynch>
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+              <div *ngIf='images?.length > 1' class="pagination">
+                <div class="arrow-pre disaple" appArrowpre>
+                  <
+                </div>
+                <ul class="list">
+                  <li *ngFor='let groupe of images; let g = index ; let isFirst = first' [attr.data-index]="g" [class.active]="isFirst" appPagination>{{g+1}}</li>
+                </ul>
+                <div class="arrow-next" appArrownext>
+                  >
+                </div>
+              </div>
+
+            <div class="section-notes" *ngIf='Notes'>
+                <h3 class="ns-title">
+                  Note(s)
+                </h3>
+                <div class="notes" [innerHtml]='marked(Notes || "")'>
+                  <!-- {{Notes}} -->
+                </div>
+            </div>
+            <div class="section-shortcut" *ngIf='Shortcuts'>
+                <h3 class="ns-title">
+                  Shortcut(s)
+                </h3>
+                <div *ngIf='Shortcuts' class="shortcut">
+                  <div class="link" *ngFor='let short of Shortcuts; let i=index' >
+                    <div #lnk (click)="clicking(lnk,$event)" appShortcut>
+                      {{short}}
+                    </div>
+                  </div>
+                </div>
+            </div>
+      </div>
+      </div>
+  </div>
+  <h1 class='header-title'>Olive Growing in Morocco</h1>
+</app-seclayout>
