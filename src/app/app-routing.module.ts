@@ -7,7 +7,7 @@ import { M6Component } from './maps/m6/m6.component';
 
 const routes: Routes = [
   {path: 'water-above-water-below', component: WawbComponent},
-  {path: 'troubled-waters-the-nile-conflict', component: TroubledwatersComponent },
+  {path: 'troubled-waters-the-nile-conflict', component: TroubledwatersComponent},
   {path: 'm6', component: M6Component},
   {path: '', component: MainPageComponent}
 ];
