@@ -1,0 +1,189 @@
+@import '../../../../common.less';
+
+@header-size: 96px;
+@header-size-mobile: 64px;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+:host {
+    width: 100%;
+    height: 100%;
+    .layout {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+
+        &.left{
+          .header{
+            background-color: #839a4dff;
+            .green{
+              display: none;
+            }
+            .white{
+              display: block;
+            }
+            .text{
+              color: white !important;
+              font-family: "Raleway", sans-serif;
+              @media only screen and (max-width: 600.99px){
+                  flex: auto;
+              }
+              &::ng-deep {
+                .header-title{
+                    font-size: 2.35vw;
+                    color: white;
+                    font-family: 'Rubik', sans-serif;
+                    // padding-left: 30px;
+                    @media only screen and (max-width: 1366px){
+                        font-size: 28px;
+                    }
+                    @media screen and (min-width: 520px) and (max-height: 520px) {
+                        font-size: 20px;
+                    }
+                    @media only screen and (max-width: 600.99px){
+                        padding-left: 0;
+                        font-size: 4.3vw;
+                        text-align: center;
+                        width: 100%;
+                    }
+               }
+              }
+            }
+          }
+            @media only screen and (min-width: 601px){
+              flex-flow: row-reverse;
+              .header{
+                position: relative;
+                z-index: 99;
+              }
+              app-info {
+                transform: translateX(-100vw);
+
+              }
+            }
+          }
+        .desktop({
+            flex-flow:row-reverse;
+
+        });
+        .mobile({
+            flex-flow: column-reverse;
+        });
+
+        .header {
+            flex: 0 0 auto;
+            background: white;
+            display: flex;
+            align-items: center;
+
+            .desktop({
+                width: @header-size;
+                min-width: @header-size;
+                flex-flow: column;
+                padding: 16px;
+            });
+            .mobile({
+                height: @header-size-mobile;
+                min-height: @header-size-mobile;
+                flex-flow: row;
+                padding: 12px;
+                margin-top: 0;
+                transition-property: margin-top;
+                transition-duration: 500ms;
+
+                &.hidden {
+                    margin-top: -@header-size-mobile;
+                }
+            });
+
+            .logo {
+                margin: 0;
+                .desktop({
+                    width: 64px;
+                    height: 89px;
+                    margin-bottom: 20px;
+                });
+                .mobile({
+                    width: 58px;
+                    height: 40px;
+                    margin-right: 20px;
+                });
+                @media screen and (min-width: 520px) and (max-height: 520px) {
+                    width: 58px;
+                    height: 40px;
+                }
+
+                cursor: pointer;
+            }
+            .text {
+                display: flex;
+                border-left: 1px solid white;
+                padding-left: 10px;
+                @media only screen and (min-width: 601px){
+                    padding-left: 20px;
+                }
+                @media screen and (min-width: 520px) and (max-height: 520px) {
+                    padding-left: 20px;
+                }
+                .desktop({
+                    transform: rotate(90deg);
+                    transform-origin: @header-size/2 @header-size/2;
+                    flex-flow: row;
+                    align-items: center;
+                    width: @header-size;
+                    height: @header-size;
+                });
+                .mobile({
+                    flex-flow: column;
+                    align-items: flex-start;
+                });
+
+                &::ng-deep {
+                    h1, h2 {
+                        .font-sourcecode;
+                        color: @accent;
+                        margin: 0;
+                        white-space: nowrap;
+                    }
+                    h1 {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        // .desktop({
+                        //     font-size: 30px;
+                        // });
+                        .mobile({
+                            font-size: 14px;
+                            line-height: 18px;
+                        });
+                    }
+                    h2 {
+                        font-weight: 500;
+                        font-size: 20px;
+                    }
+                }
+            }
+            .info {
+                cursor: pointer;
+
+                .desktop({
+                    width: 38px;
+                    height: 38px;
+                    margin-bottom: 12px;
+                    margin-top: auto;
+                });
+                .mobile({
+                    width: 20px;
+                    height: 20px;
+                    margin-left: auto;
+                });
+            }
+        }
+
+
+    }
+
+
+
+}
+
+
