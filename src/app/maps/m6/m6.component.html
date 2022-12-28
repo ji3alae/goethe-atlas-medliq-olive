@@ -22,9 +22,6 @@
       <div class="btn-model open">
           <span class=""></span>
       </div>
-
-
-      
       <div class="model open">
           <div class="model-content">
 
@@ -63,6 +60,7 @@
 
 
               <div *ngIf='images?.length > 1' class="pagination">
+                <!-- <pagination></pagination> -->
                 <span class="arrow-pre disaple" appArrowpre>&#60;</span>
                 <ul class="list">
                   <li *ngFor='let groupe of images; let g = index ; let isFirst = first' [attr.data-index]="g" [class.active]="isFirst" appPagination>{{g+1}}</li>
@@ -71,16 +69,11 @@
               </div>
 
 
-
-
-<NotesComponent></NotesComponent>
-            <!-- <div class="section-notes" *ngIf='Notes'>
-                <h3 class="ns-title">
-                  Note(s)
-                </h3>
-                <div class="notes" [innerHtml]='marked(Notes || "")'>
-                </div>
-            </div> -->
+              
+              <div class="section-notes" *ngIf='Notes'>
+                <h3 class="ns-title">Note(s)</h3>
+                <div class="notes" [innerHtml]='marked(Notes || "")'></div>
+            </div>
 
 
 

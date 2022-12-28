@@ -31,13 +31,13 @@ import { M6Component } from './maps/m6/m6.component';
 import { SeclayoutComponent } from './maps/m6/seclayout/seclayout.component';
 import { PrevDirective } from './maps/m6/directives/prev.directive';
 import { NextDirective } from './maps/m6/directives/next.directive';
-import { AccordionDirective } from './maps/m6/directives/accordion.directive';
 import { SynchDirective } from './maps/m6/directives/synch.directive';
 import { PaginationDirective } from './maps/m6/directives/pagination.directive';
 import { InfoComponent } from './maps/m6/info/info.component';
 import { ArrowpreDirective } from './maps/m6/directives/arrowpre.directive';
 import { ArrownextDirective } from './maps/m6/directives/arrownext.directive';
 import { ShortcutDirective } from './maps/m6/directives/shortcut.directive';
+import { PaginationComponent } from './maps/m6/model/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -67,13 +67,13 @@ import { ShortcutDirective } from './maps/m6/directives/shortcut.directive';
     NextDirective,
     M6Component,
     SeclayoutComponent,
-    AccordionDirective,
     SynchDirective,
     PaginationDirective,
     InfoComponent,
     ArrowpreDirective,
     ArrownextDirective,
     ShortcutDirective,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
