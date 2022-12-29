@@ -1,4 +1,4 @@
-import { ShortcutDirective } from './m6-shortcut.directive';
+import { ShortcutDirective } from './m6.shortcut.directive';
 
 describe('ShortcutDirective', () => {
   it('should create an instance', () => {
