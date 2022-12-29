@@ -228,7 +228,7 @@ export class M6Component implements OnInit {
             const width = `30px`;
             const height = `30px`;
             el.className = 'marker';
-            el.style.backgroundImage = `url(../../../assets/img/marker.png)`; // put the Rabat Icon Url
+            el.style.backgroundImage = `url(../../../assets/img/m6-marker.svg)`; // put the Rabat Icon Url
 
             el.style.width = width;
             el.style.height = height;
