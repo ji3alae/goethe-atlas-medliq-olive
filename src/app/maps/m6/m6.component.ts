@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
-import { delay, first, sample, switchMap } from 'rxjs/operators';
+import { delay, first, switchMap } from 'rxjs/operators';
 
 import { MapService } from '../../map.service';
 import { PlayerService } from '../../player.service';
