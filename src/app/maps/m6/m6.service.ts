@@ -10,7 +10,6 @@ import { ReplaySubject } from 'rxjs';
 })
 export class M6Service {
   BASE = 'appMvI3Q7ldjlGKyZ';
-      
   authorRecords = new ReplaySubject<any>(1);
   TITLE = '';
   SUBTITLE = '';
@@ -20,9 +19,7 @@ export class M6Service {
   Acknowledgements = '';
   subTitle = '';
   
-  constructor(private api: ApiService) {
-    // this.getAuthors();
-  }
+  constructor(private api: ApiService) { }
 
   fetchSettings() {
     return this.api.airtableFetch(this.BASE, 'Settings', 'website').pipe(
@@ -80,6 +77,5 @@ export class M6Service {
           this.authorRecords.next(authorRecords);
         });
   }
-
 }
 

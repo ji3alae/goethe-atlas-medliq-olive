@@ -64,18 +64,15 @@
           }
         .desktop({
             flex-flow:row-reverse;
-
         });
         .mobile({
             flex-flow: column-reverse;
         });
-
         .header {
             flex: 0 0 auto;
             background: white;
             display: flex;
             align-items: center;
-
             .desktop({
                 width: @header-size;
                 min-width: @header-size;
@@ -90,12 +87,10 @@
                 margin-top: 0;
                 transition-property: margin-top;
                 transition-duration: 500ms;
-
                 &.hidden {
                     margin-top: -@header-size-mobile;
                 }
             });
-
             .logo {
                 margin: 0;
                 .desktop({
@@ -137,7 +132,6 @@
                     flex-flow: column;
                     align-items: flex-start;
                 });
-
                 &::ng-deep {
                     h1, h2 {
                         .font-sourcecode;
@@ -148,9 +142,6 @@
                     h1 {
                         font-weight: bold;
                         text-transform: uppercase;
-                        // .desktop({
-                        //     font-size: 30px;
-                        // });
                         .mobile({
                             font-size: 14px;
                             line-height: 18px;
@@ -164,7 +155,6 @@
             }
             .info {
                 cursor: pointer;
-
                 .desktop({
                     width: 38px;
                     height: 38px;
@@ -178,12 +168,7 @@
                 });
             }
         }
-
-
     }
-
-
-
 }
 
 

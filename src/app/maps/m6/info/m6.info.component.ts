@@ -17,7 +17,5 @@ export class InfoComponent implements OnInit {
 
   constructor(public m6: M6Service) { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

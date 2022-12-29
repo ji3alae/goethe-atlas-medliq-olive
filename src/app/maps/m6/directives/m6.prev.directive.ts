@@ -3,6 +3,7 @@ import { Directive,ElementRef,HostListener } from '@angular/core';
 @Directive({
   selector: '[appPrev]'
 })
+  
 export class PrevDirective {
 
   constructor(private el: ElementRef) {
@@ -13,5 +14,4 @@ export class PrevDirective {
     var item = elm.getElementsByClassName("item");
     elm.prepend(item[item.length - 1]);
   }
-
 }
