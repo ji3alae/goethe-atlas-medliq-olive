@@ -19,12 +19,12 @@ export class SynchDirective {
       const item = document.querySelector(
         `.slider-wrap .item[data-index="${i}"]`
       );
-        document.querySelector('.slider-main').appendChild(item);
+      document.querySelector('.slider-main').appendChild(item);
     }
-      for (let i = 0; i < elm; i++) {
-        const item = document.querySelector(
-          `.slider-wrap .item[data-index="${i}"]`
-          );
+    for (let i = 0; i < elm; i++) {
+      const item = document.querySelector(
+        `.slider-wrap .item[data-index="${i}"]`
+      );
       document.querySelector('.slider-main').appendChild(item);
     }
   }
