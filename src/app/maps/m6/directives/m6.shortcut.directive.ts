@@ -15,5 +15,4 @@ export class ShortcutDirective {
       behavior: 'smooth'
     });
   }
-
 }

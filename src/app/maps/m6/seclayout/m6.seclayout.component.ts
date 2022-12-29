@@ -7,15 +7,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './m6.seclayout.component.html',
   styleUrls: ['./m6.seclayout.component.less']
 })
+  
 export class SeclayoutComponent implements OnInit {
   @Input() hideHeader = false;
   @Output() info = new EventEmitter<boolean>();
- 
-
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }
