@@ -12,14 +12,14 @@ import { MapService } from '../../map.service';
 import { PlayerService } from '../../player.service';
 
 import * as mapboxgl from 'mapbox-gl';
-import { M6Service } from './m6.service';
+import { M6Service } from './m6-service';
 import { ActivatedRoute } from '@angular/router';
 import * as marked from 'marked';
 
 @Component({
   selector: 'app-m6',
-  templateUrl: './m6.component.html',
-  styleUrls: ['./m6.component.less'],
+  templateUrl: './m6-component.html',
+  styleUrls: ['./m6-component.less'],
 })
 export class M6Component implements OnInit {
   @ViewChild('mapEl', { static: true }) mapEl: ElementRef;

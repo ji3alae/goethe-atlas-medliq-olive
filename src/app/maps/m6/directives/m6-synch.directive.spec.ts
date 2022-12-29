@@ -1,4 +1,4 @@
-import { SynchDirective } from './synch.directive';
+import { SynchDirective } from './m6-synch.directive';
 
 describe('SynchDirective', () => {
   it('should create an instance', () => {
