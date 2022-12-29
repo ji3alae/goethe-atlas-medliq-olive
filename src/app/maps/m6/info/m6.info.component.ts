@@ -3,19 +3,19 @@ import { EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 import * as marked from 'marked';
-import { WawbService } from '../wawb.service';
+import { M6Service } from '../m6.service';
 @Component({
-  selector: 'app-wawb-infobar',
-  templateUrl: './infobar.component.html',
-  styleUrls: ['./infobar.component.less']
+  selector: 'app-info',
+  templateUrl: './m6.info.component.html',
+  styleUrls: ['./m6.info.component.less']
 })
-export class WawbInfobargoetheComponent implements OnInit {
+export class InfoComponent implements OnInit {
 
   @Output() close = new EventEmitter();
 
   marked = marked;
 
-  constructor(public wawb: WawbService) { }
+  constructor(public m6: M6Service) { }
 
   ngOnInit(): void {
   }

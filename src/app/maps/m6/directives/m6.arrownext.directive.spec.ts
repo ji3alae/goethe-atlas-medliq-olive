@@ -1,4 +1,4 @@
-import { ArrownextDirective } from './arrownext.directive';
+import { ArrownextDirective } from './m6.arrownext.directive';
 
 describe('ArrownextDirective', () => {
   it('should create an instance', () => {

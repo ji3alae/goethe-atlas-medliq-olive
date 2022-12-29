@@ -1,4 +1,4 @@
-import { NextDirective } from './next.directive';
+import { NextDirective } from './m6.next.directive';
 
 describe('NextDirective', () => {
   it('should create an instance', () => {

@@ -28,16 +28,15 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { TimelineMapComponent } from './templates/timeline/timeline-map/timeline-map.component';
 import { TalkingHeadsMapComponent } from './templates/talking-heads/talking-heads-map/talking-heads-map.component';
 import { M6Component } from './maps/m6/m6.component';
-import { SeclayoutComponent } from './maps/m6/seclayout/seclayout.component';
-import { PrevDirective } from './maps/m6/directives/prev.directive';
-import { NextDirective } from './maps/m6/directives/next.directive';
-import { AccordionDirective } from './maps/m6/directives/accordion.directive';
-import { SynchDirective } from './maps/m6/directives/synch.directive';
-import { PaginationDirective } from './maps/m6/directives/pagination.directive';
-import { InfoComponent } from './maps/m6/info/info.component';
-import { ArrowpreDirective } from './maps/m6/directives/arrowpre.directive';
-import { ArrownextDirective } from './maps/m6/directives/arrownext.directive';
-import { ShortcutDirective } from './maps/m6/directives/shortcut.directive';
+import { SeclayoutComponent } from './maps/m6/seclayout/m6.seclayout.component';
+import { PrevDirective } from './maps/m6/directives/m6.prev.directive';
+import { NextDirective } from './maps/m6/directives/m6.next.directive';
+import { SynchDirective } from './maps/m6/directives/m6.synch.directive';
+import { PaginationDirective } from './maps/m6/directives/m6.pagination.directive';
+import { InfoComponent } from './maps/m6/info/m6.info.component';
+import { ArrowpreDirective } from './maps/m6/directives/m6.arrowpre.directive';
+import { ArrownextDirective } from './maps/m6/directives/m6.arrownext.directive';
+import { ShortcutDirective } from './maps/m6/directives/m6.shortcut.directive';
 
 @NgModule({
   declarations: [
@@ -67,7 +66,6 @@ import { ShortcutDirective } from './maps/m6/directives/shortcut.directive';
     NextDirective,
     M6Component,
     SeclayoutComponent,
-    AccordionDirective,
     SynchDirective,
     PaginationDirective,
     InfoComponent,

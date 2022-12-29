@@ -11,35 +11,43 @@
             </div>
           </div>
           <div class="button-area">
-            <button type="button" class="prev" appPrev><</button>
-            <button type="button" class="next" appNext>></button>
+            <button type="button" class="prev" appPrev>&#60;</button>
+            <button type="button" class="next" appNext>&#62;</button>
           </div>
         </div>
       </div>
+
+
+
       <div class="btn-model open">
-          <span class="">
-          </span>
+          <span class=""></span>
       </div>
       <div class="model open">
           <div class="model-content">
+
+
+
+
               <div class='maps-content'>
                   <div class=the_map #mapEl></div>
               </div>
+
+
+
+
+
               <div *ngIf="sample" class="text-content">
                 <h2 class="title" *ngIf="sample">{{title}}</h2>
                 <div class="desc" [innerHtml]='marked(description || "")'></div>
-                <!-- <div *ngIf="accordion" class="accordion-content">
-                    <dl *ngFor="let acc of accordion" class="accordion" >
-                          <dt appAccordion>
-                              <h3 class="acc-title">{{acc[0]}}</h3>
-                          </dt>
-                          <dd class="acc-disc" [innerHtml]='marked(acc[1] || "")'></dd>
-                    </dl>
-                </div> -->
             </div>
+
+
+
+
+
             <div *ngIf='name !== "Rabat"' class="cashe">
               <div   class="carousel thumbnail-slick" *ngFor='let groupe of images; let g = index ; let isFirst = first' [class.active]="isFirst" [attr.data-index]="g" >
-                <div class="slide-item slide-item-v" *ngFor='let image of groupe ; let i = index ; let isFirst = first ' [attr.data-index]="i">
+                <div class="slide-item slide-item-v"  *ngFor='let image of groupe ; let i = index ; let isFirst = first ' [attr.data-index]="i" [ngClass]="{'active': i === 0}">
                   <figure >
                       <img alt="" [src]=image.url [attr.data-index]="i+(4*g)" appSynch>
                   </figure>
@@ -47,26 +55,30 @@
               </div>
             </div>
 
+
+
+
+
               <div *ngIf='images?.length > 1' class="pagination">
-                <div class="arrow-pre disaple" appArrowpre>
-                  <
-                </div>
+                <span class="arrow-pre disaple" appArrowpre>&#60;</span>
                 <ul class="list">
                   <li *ngFor='let groupe of images; let g = index ; let isFirst = first' [attr.data-index]="g" [class.active]="isFirst" appPagination>{{g+1}}</li>
                 </ul>
-                <div class="arrow-next" appArrownext>
-                  >
-                </div>
+                <span class="arrow-next" appArrownext>&#62;</span>
               </div>
 
-            <div class="section-notes" *ngIf='Notes'>
-                <h3 class="ns-title">
-                  Note(s)
-                </h3>
-                <div class="notes" [innerHtml]='marked(Notes || "")'>
-                  <!-- {{Notes}} -->
-                </div>
+
+              
+              <div class="section-notes" *ngIf='Notes'>
+                <h3 class="ns-title">Note(s)</h3>
+                <div class="notes" [innerHtml]='marked(Notes || "")'></div>
             </div>
+
+
+
+
+
+
             <div class="section-shortcut" *ngIf='Shortcuts'>
                 <h3 class="ns-title">
                   Shortcut(s)
@@ -79,6 +91,12 @@
                   </div>
                 </div>
             </div>
+
+
+
+
+
+            
       </div>
       </div>
   </div>
