@@ -37,7 +37,6 @@ import { InfoComponent } from './maps/m6/info/m6.info.component';
 import { ArrowpreDirective } from './maps/m6/directives/m6.arrowpre.directive';
 import { ArrownextDirective } from './maps/m6/directives/m6.arrownext.directive';
 import { ShortcutDirective } from './maps/m6/directives/m6.shortcut.directive';
-import { PaginationComponent } from './maps/m6/model/pagination/m6.pagination.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +72,6 @@ import { PaginationComponent } from './maps/m6/model/pagination/m6.pagination.co
     ArrowpreDirective,
     ArrownextDirective,
     ShortcutDirective,
-    PaginationComponent,
   ],
   imports: [
     BrowserModule,
