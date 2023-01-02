@@ -25,6 +25,13 @@
 
         }
       }
+      .open {
+        ::ng-deep p {
+          h3 {
+            margin-bottom: -0.5rem;
+          }
+        }
+      }
     }
     .content-map {
         height: 100vh;
@@ -211,6 +218,7 @@
         .section-notes,
         .section-shortcut {
             color: #767676;
+            word-break: break-word;
             .title {
               color: black;
               font-size: 30px;
@@ -276,6 +284,34 @@
                   animation: scale-up-top .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
                 }
             }
+            ::ng-deep p{
+              margin: 0 0 8px; 
+               code {
+              font-size: 60%;
+              position: relative;
+              top: -5px;
+            }
+            }
+        }
+        .section-notes {
+          .notes {
+            ::ng-deep p {
+              line-height: 1.2;
+              font-size: 12px;
+              color: #839a4d;
+              a {
+                color: #839a4d;
+                text-decoration: underline;
+                // text-decoration-color: black;
+                opacity: 1;
+                transition: all 0.5s linear;
+                &:hover {
+                  opacity: 0.75;
+                  text-decoration-color: #839a4d;
+                }
+              }
+            }
+          }
         }
     }
 }
