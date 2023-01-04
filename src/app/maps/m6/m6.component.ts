@@ -146,16 +146,6 @@ export class M6Component implements OnInit {
         ? this.sample.Shortcuts?.json()
         : this.sample.Shortcuts;
     this.title = this.Location + ' - ' + this.Chapter;
-    var items = this.sample.Images;
-    var group = 0;
-    var images = [];
-    for (let i = 0; i < items.length; i++) {
-      if (i > 0 && i % 4 === 0) group++;
-      if (!Array.isArray(images[group])) images[group] = [];
-      images[group].push(items[i]);
-    }
-
-    this.images = images;
   }
 
   set sample(value) {
@@ -193,11 +183,9 @@ export class M6Component implements OnInit {
     });
 
     this.theMap = new mapboxgl.Map({
-      // accessToken: 'pk.eyJ1IjoicHl4aWNvbSIsImEiOiJjbDJobWF2NWUwZmZhM2Vxd3h3dnRqdXJsIn0.Y1IhxLMO5eUzan6uIOyx7A',
       accessToken:
         'pk.eyJ1IjoiYXRsYXNtZWRsaXEiLCJhIjoiY2tpbXgzNW5qMHhhcjJ5cGtydHpkNnJqYyJ9.vfietFuvTA8S1vaGlm3CUQ',
       container: this.mapEl.nativeElement,
-      // style: 'mapbox://styles/pyxicom/cl2hmgdl4006114pkays08nr0',
       style: 'mapbox://styles/atlasmedliq/clbl6u8pr004o14mosduath7j',
       zoom: 5.25,
       center: [-6.25, 32.25],
@@ -229,67 +217,9 @@ export class M6Component implements OnInit {
             const height = `30px`;
             el.className = 'marker';
             el.style.backgroundImage = `url(../../../assets/img/m6-marker.svg)`; // put the Rabat Icon Url
-
             el.style.width = width;
             el.style.height = height;
             el.style.backgroundSize = '100%';
-
-            el.addEventListener('mouseenter', () => {
-              this.theMap.getCanvas().style.cursor = 'pointer';
-              // Copy coordinates array.
-              const coordinates = marker.properties.coordinates.split(',');
-              this.sample = marker.properties;
-              this.Location = this.sample.Location;
-              this.Chapter = this.sample.Chapter;
-              popup
-                .setLngLat(coordinates.reverse())
-                .setHTML(this.Location + ' - ' + this.Chapter)
-                .addTo(this.theMap);
-            });
-            el.addEventListener('mouseleave', () => {
-              this.theMap.getCanvas().style.cursor = '';
-              popup.remove();
-            });
-
-            el.addEventListener('click', () => {
-              this.sample = marker.properties;
-              this.sample = this.sample.Images
-                ? {
-                    ...this.sample,
-                    Images: [
-                      ...this.sample.Images.map((image) =>
-                        image.width <= image.height
-                          ? { ...image, newClass: true }
-                          : { ...image, newClass: false }
-                      ),
-                    ],
-                  }
-                : null;
-
-              // this.accordion = this.sample.accordion;
-              this.name = this.sample.name;
-              this.pics = this.sample.Images;
-              this.description = this.sample.description;
-              this.Location = this.sample.Location;
-              this.Chapter = this.sample.Chapter;
-              this.Notes = this.sample.Notes;
-              this.Shortcuts = this.sample.Shortcuts;
-              this.title = this.Location + ' - ' + this.Chapter;
-              this.features = samples.features;
-
-              this.info = false;
-              location.hash = '#' + this.sample.id;
-
-              var items = this.sample.Images;
-              var group = 0;
-              var images = [];
-              for (let i = 0; i < items.length; i++) {
-                if (i > 0 && i % 4 === 0) group++;
-                if (!Array.isArray(images[group])) images[group] = [];
-                images[group].push(items[i]);
-              }
-              this.images = images;
-            });
             new mapboxgl.Marker(el)
               .setLngLat(marker.properties.coordinates.split(',').reverse())
               .addTo(this.theMap);
@@ -338,6 +268,7 @@ export class M6Component implements OnInit {
 
           // inspect a cluster on click
           this.theMap.on('click', 'clusters', (e) => {
+            console.log(e);
             const features = this.theMap.queryRenderedFeatures(e.point, {
               layers: ['clusters'],
             });
@@ -347,7 +278,6 @@ export class M6Component implements OnInit {
             ) as mapboxgl.GeoJSONSource;
             source.getClusterExpansionZoom(clusterId, (err, zoom) => {
               if (err) return;
-
               this.theMap.easeTo({
                 center: features[0].geometry['coordinates'],
                 zoom: 9,
@@ -369,7 +299,6 @@ export class M6Component implements OnInit {
             this.LAYER_NAME,
             this.SOURCE_NAME
           );
-
           this.sample = null;
           this.theMap.on('mouseenter', this.LAYER_NAME, (e) => {
             this.theMap.getCanvas().style.cursor = 'pointer';
@@ -390,17 +319,6 @@ export class M6Component implements OnInit {
             this.theMap.getCanvas().style.cursor = '';
             popup.remove();
           });
-
-          var items;
-          items = this.sample.Images;
-          var group = 0;
-          var images = [];
-          for (let i = 0; i < items?.length; i++) {
-            if (i > 0 && i % 4 === 0) group++;
-            if (!Array.isArray(images[group])) images[group] = [];
-            images[group].push(items[i]);
-          }
-          this.images = images;
           this.theMap.on('click', this.LAYER_NAME, (e) => {
             this.sample = e.features[0].properties;
             this.sample = {
