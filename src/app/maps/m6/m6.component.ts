@@ -268,7 +268,7 @@ export class M6Component implements OnInit {
 
           // inspect a cluster on click
           this.theMap.on('click', 'clusters', (e) => {
-            console.log(e);
+            // console.log(e);
             const features = this.theMap.queryRenderedFeatures(e.point, {
               layers: ['clusters'],
             });
@@ -353,6 +353,7 @@ export class M6Component implements OnInit {
             var images = [];
             for (let i = 0; i < items.length; i++) {
               if (i > 0 && i % 4 === 0) group++;
+              if (i === 0) console.log(items[i]);
               if (!Array.isArray(images[group])) images[group] = [];
               images[group].push(items[i]);
             }

@@ -1,4 +1,5 @@
 <app-seclayout  (info)='info = $event; sample = $event ? null : sample' [hideHeader]='!!sample'>
+  <h1 class='header-title'>Olive Growing in Morocco</h1>
   <div class='map content'>
       <app-info [class.open]='!!info' (close)='info = false'></app-info>
       <div class="product slide-content">
@@ -47,7 +48,7 @@
 
             <div *ngIf='name !== "Rabat"' class="cashe">
               <div   class="carousel thumbnail-slick" *ngFor='let groupe of images; let g = index ; let isFirst = first' [class.active]="isFirst" [attr.data-index]="g" >
-                <div class="slide-item slide-item-v"  *ngFor='let image of groupe ; let i = index ; let isFirst = first ' [attr.data-index]="i" [ngClass]="{'active': i === 0}">
+                <div class="slide-item slide-item-v"  *ngFor='let image of groupe ; let i = index ; let isFirst = first ' [attr.data-index]="i" [class.active]="isFirst">
                   <figure >
                       <img alt="" [src]=image.url [attr.data-index]="i+(4*g)" appSynch>
                   </figure>
@@ -101,5 +102,4 @@
       </div>
       </div>
   </div>
-  <h1 class='header-title'>Olive Growing in Morocco</h1>
 </app-seclayout>
