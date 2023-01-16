@@ -28,12 +28,14 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { TimelineMapComponent } from './templates/timeline/timeline-map/timeline-map.component';
 import { TalkingHeadsMapComponent } from './templates/talking-heads/talking-heads-map/talking-heads-map.component';
 import { M6Component } from './maps/m6/m6.component';
-import { SeclayoutComponent } from './maps/m6/seclayout/m6.seclayout.component';
+import { infobarComponent } from './maps/m6/infobar/m6.infobar.component';
 import { PrevDirective } from './maps/m6/directives/m6.prev.directive';
 import { NextDirective } from './maps/m6/directives/m6.next.directive';
 import { SynchDirective } from './maps/m6/directives/m6.synch.directive';
 import { PaginationDirective } from './maps/m6/directives/m6.pagination.directive';
-import { InfoComponent } from './maps/m6/info/m6.info.component';
+import { sidebarComponent } from './maps/m6/sidebar/m6.sidebar.component';
+import { slideContentComponent } from './maps/m6/slidecontent/m6.slidecontent.component';
+import { modelComponent } from './maps/m6/model/m6.model.component';
 import { ArrowpreDirective } from './maps/m6/directives/m6.arrowpre.directive';
 import { ArrownextDirective } from './maps/m6/directives/m6.arrownext.directive';
 import { ShortcutDirective } from './maps/m6/directives/m6.shortcut.directive';
@@ -66,10 +68,12 @@ import { PaginationComponent } from './maps/m6/model/pagination/m6.pagination.co
     PrevDirective,
     NextDirective,
     M6Component,
-    SeclayoutComponent,
+    infobarComponent,
     SynchDirective,
     PaginationDirective,
-    InfoComponent,
+    sidebarComponent,
+    slideContentComponent,
+    modelComponent,
     ArrowpreDirective,
     ArrownextDirective,
     ShortcutDirective,

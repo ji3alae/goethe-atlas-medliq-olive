@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
 import * as marked from 'marked';
 import { M6Service } from '../m6.service';
 @Component({
-  selector: 'app-info',
-  templateUrl: './m6.info.component.html',
-  styleUrls: ['./m6.info.component.less']
+  selector: 'app-m6-sidebar',
+  templateUrl: './m6.sidebar.component.html',
+  styleUrls: ['./m6.sidebar.component.less']
 })
-export class InfoComponent implements OnInit {
+export class sidebarComponent implements OnInit {
 
   @Output() close = new EventEmitter();
 

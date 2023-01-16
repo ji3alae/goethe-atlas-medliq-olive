@@ -3,14 +3,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-seclayout',
-  templateUrl: './m6.seclayout.component.html',
-  styleUrls: ['./m6.seclayout.component.less']
+  selector: 'app-m6-infobar',
+  templateUrl: './m6.infobar.component.html',
+  styleUrls: ['./m6.infobar.component.less']
 })
-export class SeclayoutComponent implements OnInit {
+export class infobarComponent implements OnInit {
   @Input() hideHeader = false;
   @Output() info = new EventEmitter<boolean>();
- 
+
 
 
   constructor() { }
