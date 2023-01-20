@@ -1,4 +1,4 @@
-import { PrevDirective } from './m6.prev.directive';
+import { PrevDirective } from './m6-prev.directive';
 
 describe('PrevDirective', () => {
   it('should create an instance', () => {

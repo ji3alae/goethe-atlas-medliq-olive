@@ -26,8 +26,8 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'model',
-  templateUrl: './m6.model.component.html',
-  styleUrls: ['./m6.model.component.less'],
+  templateUrl: './m6-model.component.html',
+  styleUrls: ['./m6-model.component.less'],
 })
 export class modelComponent implements OnInit {
   @ViewChild('mapEl', { static: true }) mapEl: ElementRef;

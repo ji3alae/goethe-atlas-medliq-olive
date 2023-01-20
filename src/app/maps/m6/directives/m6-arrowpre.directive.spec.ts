@@ -1,4 +1,4 @@
-import { ArrowpreDirective } from './m6.arrowpre.directive';
+import { ArrowpreDirective } from './m6-arrowpre.directive';
 
 describe('ArrowpreDirective', () => {
   it('should create an instance', () => {
