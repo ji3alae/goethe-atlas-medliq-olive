@@ -1,42 +1,40 @@
-// @import "../../../../common.less";
-
-.content-map {
-  height: 100vh;
-  position: relative;
-}
-figure {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  img {
-      width: 100%;
-      max-width: 100%;
-      min-height: 100%;
-      max-height: 100%;
-      object-position: center;
-      object-fit: cover;
+  .content-map {
+      height: 100vh;
+      position: relative;
   }
-}
-.portrait {
-@media screen and (min-width: 601px) {
-    img {
-      width: auto;
-      max-width: 100%;
-      min-height: 100%;
-      object-position: center;
-      object-fit: cover;
+  figure {
       height: 100%;
-      margin: 0 auto;
-      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      img {
+          width: 100%;
+          max-width: 100%;
+          min-height: 100%;
+          max-height: 100%;
+          object-position: center;
+          object-fit: cover;
+      }
+  }
+  .portrait {
+    @media screen and (min-width: 601px) {
+        img {
+          width: auto;
+          max-width: 100%;
+          min-height: 100%;
+          object-position: center;
+          object-fit: cover;
+          height: 100%;
+          margin: 0 auto;
+          display: block;
+        }
+      }
     }
-  }
-}
 
-.slide-content {
-  overflow: hidden;
-  height: 100%;
-  @media screen and (min-width: 601px) {
-    width: calc(100vw - 96px);
+  .slide-content {
+      overflow: hidden;
+      height: 100%;
+      @media screen and (min-width: 601px) {
+        width: calc(100vw - 96px);
+      }
   }
-}

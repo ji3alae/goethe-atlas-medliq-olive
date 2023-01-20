@@ -1,1 +1,14 @@
 <p>shortcuts works!</p>
+
+<div class="section-shortcut" *ngIf='Shortcuts'>
+  <h3 class="ns-title">
+    Shortcut(s)
+  </h3>
+  <div *ngIf='Shortcuts' class="shortcut">
+    <div class="link" *ngFor='let short of Shortcuts; let i=index'>
+      <div #lnk (click)="clicking(lnk,$event)" appShortcut>
+        {{short}}
+      </div>
+    </div>
+  </div>
+</div>

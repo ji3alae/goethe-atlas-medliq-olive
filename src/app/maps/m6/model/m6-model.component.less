@@ -86,13 +86,13 @@
     max-height: 85vh;
     // height: 100%;
   }
-  // .cashe {
-  //   .carousel {
+  // .cashe{
+  //   .carousel{
   //     height: 25vh;
   //     @media screen and (min-width: 601px) {
   //       height: 32vh;
   //     }
-  //     &:only-of-type {
+  //     &:only-of-type{
   //       height: auto;
   //     }
   //   }
@@ -132,14 +132,18 @@
     margin-bottom: 1vw;
     border-radius: 1.5vw;
     overflow: hidden;
+
     .the_map {
       width: 100%;
       height: 100%;
     }
   }
 
+  .text-content,
+  .section-notes,
   .section-shortcut {
     color: #767676;
+    word-break: break-word;
     .title {
       color: black;
       font-size: 30px;
@@ -205,8 +209,37 @@
         animation: scale-up-top 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
       }
     }
+    ::ng-deep p {
+      margin: 0 0 8px;
+      code {
+        font-size: 60%;
+        position: relative;
+        top: -5px;
+      }
+    }
+  }
+  .section-notes {
+    .notes {
+      ::ng-deep p {
+        line-height: 1.2;
+        font-size: 12px;
+        color: #839a4d;
+        a {
+          color: #839a4d;
+          text-decoration: underline;
+          // text-decoration-color: black;
+          opacity: 1;
+          transition: all 0.5s linear;
+          &:hover {
+            opacity: 0.75;
+            text-decoration-color: #839a4d;
+          }
+        }
+      }
+    }
   }
 }
+
 .product {
   padding: 0;
 }
@@ -300,124 +333,120 @@
     opacity: 1;
   }
 }
-.thumbnail-slick,
-.page {
-  display: none;
-  margin-bottom: 0;
-  width: 100%;
-  flex-wrap: wrap;
-  opacity: 0.5;
-  &.active {
-    animation: fade-in 3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s alternate
-      forwards;
-    display: flex;
-  }
-  .slide-item {
-    padding: 0 1vw;
-    flex: 0 0 50%;
-    max-width: 50%;
-    height: 11.5vh;
-    margin-bottom: 1vh;
-    &.slide-item-v {
-      cursor: pointer;
-      &.active {
-        cursor: default;
-        pointer-events: none;
-      }
-      figure {
-        position: relative;
-        img {
-          position: absolute;
-          height: 100%;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      }
-    }
-    &:nth-of-type(n) {
-      padding: 0 0.5vw 0 0;
-    }
-    &:nth-of-type(2n) {
-      padding: 0 0 0 0.5vw;
-    }
-    @media screen and (min-width: 601px) {
-      height: 15vh;
-    }
-    figure {
-      overflow: hidden;
-      border-radius: 1.5vw;
-      height: 100%;
-    }
-  }
-}
-// .pagination {
+// .thumbnail-slick ,.page {
+// display: none;
+// margin-bottom: 0;
+// width: 100%;
+// flex-wrap: wrap;
+// opacity: .5;
+// &.active{
+//   animation: fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0s alternate forwards;
 //   display: flex;
-//   justify-content: flex-end;
-//   align-items: center;
-//   .arrow-pre,
-//   .arrow-next {
-//     color: #839a4d;
-//     font-size: 28px;
-//     font-family: "Manrope";
-//     font-weight: 700;
-//     line-height: 0;
+// }
+// .slide-item {
+//   padding: 0 1vw;
+//   flex: 0 0 50%;
+//   max-width: 50%;
+//   height: 11.5vh;
+//   margin-bottom: 1vh;
+//   &.slide-item-v{
 //     cursor: pointer;
-//     padding-bottom: 4px;
-//     &.disaple {
-//       color: rgba(106, 106, 106, 0.4);
+//     &.active{
+//       cursor: default;
 //       pointer-events: none;
 //     }
+//     figure{
+//       position: relative;
+//       img{
+//         position: absolute;
+//         height: 100%;
+//         left: 50%;
+//         transform: translateX(-50%);
+//       }
+//     }
 //   }
-//   .list {
-//     list-style: none;
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: flex-end;
-//     padding: 0;
+//   &:nth-of-type(n){
+//     padding: 0 0.5vw 0 0;
+//   }
+//   &:nth-of-type(2n){
+//     padding: 0 0 0 0.5vw;
+//   }
+//   @media screen and (min-width: 601px) {
+//     height: 15vh;
+//   }
+//   figure{
+//     overflow: hidden;
+//     border-radius: 1.5vw;
+//     height: 100%;
+//   }
+// }
+// }
+// .pagination{
+// display: flex;
+// justify-content: flex-end;
+// align-items: center;
+// .arrow-pre,
+// .arrow-next{
+//   color: #839a4d;
+//   font-size: 28px;
+//   font-family: 'Manrope';
+//   font-weight: 700;
+//   line-height: 0;
+//   cursor: pointer;
+//   padding-bottom: 4px;
+//   &.disaple{
+//     color: rgba(106, 106, 106, 0.4);
+//     pointer-events: none;
+//   }
+// }
+// .list{
+//   list-style: none;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: flex-end;
+//   padding: 0;
+//   margin: 0 2px;
+//   li{
+//     font-family:  Helvetica, Arial, sans-serif;
+//     font-size: 12px;
+//     font-weight: 500;
+//     height: 22px;
+//     width: 22px;
 //     margin: 0 2px;
-//     li {
-//       font-family: Helvetica, Arial, sans-serif;
-//       font-size: 12px;
-//       font-weight: 500;
-//       height: 22px;
-//       width: 22px;
-//       margin: 0 2px;
-//       font-size: 14px;
-//       color: rgba(106, 106, 106, 0.4);
-//       border-radius: 50%;
-//       overflow: hidden;
-//       border: 1px solid;
-//       border-color: rgba(106, 106, 106, 0.4);
-//       text-align: center;
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       cursor: pointer;
-//       &.active {
-//         pointer-events: none;
-//       }
-//       &.active,
-//       &:hover {
-//         background-color: #839a4d;
-//         color: #fff;
-//       }
+//     font-size: 14px;
+//     color: rgba(106, 106, 106, 0.4);
+//     border-radius: 50%;
+//     overflow: hidden;
+//     border: 1px solid;
+//     border-color: rgba(106, 106, 106, 0.4);
+//     text-align: center;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     cursor: pointer;
+//     &.active{
+//       pointer-events: none;
+//     }
+//     &.active ,&:hover{
+//       background-color: #839a4d;
+//       color: #fff;
 //     }
 //   }
 // }
-
-.shortcut {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -2px;
-  .link {
-    flex: 0 auto;
-    margin: 2px;
-    div {
-      background-color: #839a4d;
-      cursor: pointer;
-      color: white;
-      border-radius: 12px;
-      padding: 4px 12px;
-    }
-  }
-}
+// }
+// .shortcut {
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 0 -2px;
+//   .link {
+//     flex: 0 auto;
+//     margin: 2px;
+//     div {
+//       background-color: #839a4d;
+//       cursor: pointer;
+//       color: white;
+//       border-radius: 12px;
+//       padding: 4px 12px;
+//     }
+//   }
+// }
