@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
-import * as Sentry from "@sentry/angular";
+import * as Sentry from '@sentry/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WawbComponent } from './maps/m1wawb/wawb.component'
+import { WawbComponent } from './maps/m1wawb/wawb.component';
 import { WawbSidebarComponent } from './maps/m1wawb/sidebar/sidebar.component';
 import { PlayerComponent } from './player/player.component';
 import { WawbInfobarComponent } from './maps/m1wawb/infobar/infobar.component';
@@ -34,12 +34,17 @@ import { NextDirective } from './maps/m6/directives/m6-next.directive';
 import { SynchDirective } from './maps/m6/directives/m6-synch.directive';
 import { PaginationDirective } from './maps/m6/directives/m6-pagination.directive';
 import { sidebarComponent } from './maps/m6/sidebar/m6-sidebar.component';
-import { slideContentComponent } from './maps/m6/slidecontent/m6-slidecontent.component';
+import { slideContentComponent } from './maps/m6/slide-content/m6-slide-content.component';
 import { modelComponent } from './maps/m6/model/m6-model.component';
 import { ArrowpreDirective } from './maps/m6/directives/m6-arrowpre.directive';
 import { ArrownextDirective } from './maps/m6/directives/m6-arrownext.directive';
 import { ShortcutDirective } from './maps/m6/directives/m6-shortcut.directive';
+import { TheMapComponent } from './maps/m6/model/the-map/m6-the-map.component';
+import { TextContentComponent } from './maps/m6/model/text-content/m6-text-content.component';
+import { CarouselComponent } from './maps/m6/model/carousel/m6-carousel.component';
 import { PaginationComponent } from './maps/m6/model/pagination/m6-pagination.component';
+import { NotesComponent } from './maps/m6/model/notes/m6-notes.component';
+import { ShortcutsComponent } from './maps/m6/model/shortcuts/m6-shortcuts.component';
 
 @NgModule({
   declarations: [
@@ -77,13 +82,14 @@ import { PaginationComponent } from './maps/m6/model/pagination/m6-pagination.co
     ArrowpreDirective,
     ArrownextDirective,
     ShortcutDirective,
+    TheMapComponent,
+    TextContentComponent,
+    CarouselComponent,
     PaginationComponent,
+    NotesComponent,
+    ShortcutsComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [
     {
       provide: ErrorHandler,
@@ -102,6 +108,6 @@ import { PaginationComponent } from './maps/m6/model/pagination/m6-pagination.co
       multi: true,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

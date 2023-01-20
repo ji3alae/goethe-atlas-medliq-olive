@@ -1,10 +1,16 @@
 import {
+  Output,
   Component,
   ElementRef,
   OnInit,
   QueryList,
   ViewChild,
+  EventEmitter,
 } from '@angular/core';
+
+import * as marked from 'marked';
+import { M6Service } from '../../m6.service';
+
 import { ReplaySubject } from 'rxjs';
 import { delay, first, sample, switchMap } from 'rxjs/operators';
 
@@ -12,16 +18,14 @@ import { MapService } from '../../../../map.service';
 import { PlayerService } from '../../../../player.service';
 
 import * as mapboxgl from 'mapbox-gl';
-import { M6Service } from './../../m6.service';
 import { ActivatedRoute } from '@angular/router';
-import * as marked from 'marked';
 
 @Component({
-  selector: 'pagination',
-  templateUrl: './m6-pagination.component.html',
-  styleUrls: ['./m6-pagination.component.less'],
+  selector: 'the-map',
+  templateUrl: './m6-the-map.component.html',
+  styleUrls: ['./m6-the-map.component.less'],
 })
-export class PaginationComponent implements OnInit {
+export class TheMapComponent implements OnInit {
   @ViewChild('mapEl', { static: true }) mapEl: ElementRef;
   @ViewChild('lnk') lnk: QueryList<ElementRef>;
 
@@ -369,6 +373,4 @@ export class PaginationComponent implements OnInit {
         });
     });
   }
-
-  // ngOnInit(): void {}
 }

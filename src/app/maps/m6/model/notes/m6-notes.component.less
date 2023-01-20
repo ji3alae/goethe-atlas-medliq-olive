@@ -1,0 +1,99 @@
+.section-notes {
+  color: #767676;
+  .title {
+    color: black;
+    font-size: 30px;
+    margin: 0 0 1vh;
+    text-transform: uppercase;
+  }
+  .accordion {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .acc-title {
+    font-weight: 900;
+    padding-left: 28px;
+    position: relative;
+    margin: 4px 0 0px;
+    cursor: pointer;
+
+    &:before {
+      content: "<";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 50%;
+      left: 0;
+      transition: 0.5s all;
+      transform: translateY(-50%) rotate(-90deg);
+      border-radius: 50%;
+      border: 1px solid #839a4d;
+      color: #839a4d;
+      font-size: 20px;
+      font-family: "Manrope";
+      font-weight: 700;
+      line-height: 0;
+      padding-bottom: 1.1px;
+      box-sizing: border-box;
+      padding: 3px 2px 4px 2px;
+    }
+  }
+
+  .acc-title.active {
+    &:before {
+      transform: translateY(-50%) rotate(90deg);
+      background-color: #839a4d;
+      color: white;
+    }
+  }
+
+  p,
+  .acc-disc {
+    font-family: 14px;
+    font-weight: 500;
+    transform: scaleY(0);
+    height: 0;
+    min-height: 0;
+    transition: 0.5s all linear;
+    margin-left: 28px;
+    &.active {
+      min-height: 50px;
+      animation: scale-up-top 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+  }
+}
+
+.section-notes {
+  p {
+    line-height: 1.2;
+    font-size: 12px;
+    color: #839a4d;
+    a {
+      color: #839a4d;
+      text-decoration: underline;
+      text-decoration-color: black;
+      opacity: 1;
+      transition: all 0.5s linear;
+      &:hover {
+        opacity: 0.75;
+        text-decoration-color: #839a4d;
+      }
+    }
+  }
+}
+
+.section-notes {
+  word-break: break-word;
+  p {
+    margin: 0 0 8px;
+  }
+  code {
+    font-size: 60%;
+    position: relative;
+    top: -5px;
+  }
+}

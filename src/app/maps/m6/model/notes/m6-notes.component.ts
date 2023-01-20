@@ -17,11 +17,11 @@ import { ActivatedRoute } from '@angular/router';
 import * as marked from 'marked';
 
 @Component({
-  selector: 'pagination',
-  templateUrl: './m6-pagination.component.html',
-  styleUrls: ['./m6-pagination.component.less'],
+  selector: 'notes',
+  templateUrl: './m6-notes.component.html',
+  styleUrls: ['./m6-notes.component.less'],
 })
-export class PaginationComponent implements OnInit {
+export class NotesComponent implements OnInit {
   @ViewChild('mapEl', { static: true }) mapEl: ElementRef;
   @ViewChild('lnk') lnk: QueryList<ElementRef>;
 

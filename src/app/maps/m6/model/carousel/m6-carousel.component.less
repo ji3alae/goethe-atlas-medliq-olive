@@ -1,0 +1,61 @@
+.cashe {
+  .carousel {
+    height: 25vh;
+    @media screen and (min-width: 601px) {
+      height: 32vh;
+    }
+    &:only-of-type {
+      height: auto;
+    }
+  }
+}
+.thumbnail-slick,
+.page {
+  display: none;
+  margin-bottom: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  opacity: 0.5;
+  &.active {
+    animation: fade-in 3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s alternate
+      forwards;
+    display: flex;
+  }
+  .slide-item {
+    padding: 0 1vw;
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 11.5vh;
+    margin-bottom: 1vh;
+    &.slide-item-v {
+      cursor: pointer;
+      &.active {
+        cursor: default;
+        pointer-events: none;
+      }
+      figure {
+        position: relative;
+        img {
+          position: absolute;
+          height: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &:nth-of-type(n) {
+      padding: 0 0.5vw 0 0;
+    }
+    &:nth-of-type(2n) {
+      padding: 0 0 0 0.5vw;
+    }
+    @media screen and (min-width: 601px) {
+      height: 15vh;
+    }
+    figure {
+      overflow: hidden;
+      border-radius: 1.5vw;
+      height: 100%;
+    }
+  }
+}

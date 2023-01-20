@@ -25,9 +25,9 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'slidecontent',
-  templateUrl: './m6-slidecontent.component.html',
-  styleUrls: ['./m6-slidecontent.component.less'],
+  selector: 'slide-content',
+  templateUrl: './m6-slide-content.component.html',
+  styleUrls: ['./m6-slide-content.component.less'],
 })
 export class slideContentComponent implements OnInit {
   @ViewChild('mapEl', { static: true }) mapEl: ElementRef;

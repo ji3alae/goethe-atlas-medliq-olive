@@ -1,0 +1,6 @@
+<p>notes works!</p>
+
+<div class="section-notes" *ngIf='Notes'>
+  <h3 class="ns-title">Note(s)</h3>
+  <div class="notes" [innerHtml]='marked(Notes || "")'></div>
+</div>

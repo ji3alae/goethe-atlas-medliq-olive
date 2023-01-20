@@ -9,28 +9,21 @@
 
 <div class="model open">
   <div class="model-content">
-
-
-
-
+    <the-map></the-map>
     <div class='maps-content'>
       <div class=the_map #mapEl></div>
     </div>
-
-
-
-
-
-    <div *ngIf="sample" class="text-content">
+    <text-content></text-content>
+    <!-- <div *ngIf="sample" class="text-content">
       <h2 class="title" *ngIf="sample">{{title}}</h2>
       <div class="desc" [innerHtml]='marked(description || "")'></div>
-    </div>
+    </div> -->
 
 
 
 
-
-    <div *ngIf='name !== "Rabat"' class="cashe">
+    <carousel></carousel>
+    <!-- <div *ngIf='name !== "Rabat"' class="cashe">
       <div class="carousel thumbnail-slick" *ngFor='let groupe of images; let g = index ; let isFirst = first'
         [class.active]="isFirst" [attr.data-index]="g">
         <div class="slide-item slide-item-v" *ngFor='let image of groupe ; let i = index ; let isFirst = first '
@@ -40,34 +33,33 @@
           </figure>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 
 
-
-    <div *ngIf='images?.length > 1' class="pagination">
-      <!-- <pagination></pagination> -->
+    <pagination></pagination>
+    <!-- <div *ngIf='images?.length > 1' class="pagination">
       <span class="arrow-pre disaple" appArrowpre>&#60;</span>
       <ul class="list">
         <li *ngFor='let groupe of images; let g = index ; let isFirst = first' [attr.data-index]="g"
           [class.active]="isFirst" appPagination>{{g+1}}</li>
       </ul>
       <span class="arrow-next" appArrownext>&#62;</span>
-    </div>
+    </div> -->
 
 
-
-    <div class="section-notes" *ngIf='Notes'>
+    <notes></notes>
+    <!-- <div class="section-notes" *ngIf='Notes'>
       <h3 class="ns-title">Note(s)</h3>
       <div class="notes" [innerHtml]='marked(Notes || "")'></div>
-    </div>
+    </div> -->
 
 
 
 
 
-
+    <shortcuts></shortcuts>
     <div class="section-shortcut" *ngIf='Shortcuts'>
       <h3 class="ns-title">
         Shortcut(s)
