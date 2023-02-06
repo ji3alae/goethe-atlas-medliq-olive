@@ -15,6 +15,7 @@ import { ReplaySubject } from 'rxjs';
 import { delay, first, sample, switchMap } from 'rxjs/operators';
 
 import { MapService } from '../../../../map.service';
+import { M6ModelMapService } from '../m6-model-map.service';
 import { PlayerService } from '../../../../player.service';
 
 import * as mapboxgl from 'mapbox-gl';
@@ -56,6 +57,7 @@ export class TheMapComponent implements OnInit {
   constructor(
     private api: M6Service,
     private map: MapService,
+    private modelMap: M6ModelMapService,
     private player: PlayerService,
     private activatedRoute: ActivatedRoute
   ) {
@@ -115,77 +117,11 @@ export class TheMapComponent implements OnInit {
         });
       });
   }
-  clicking(el) {
-    const sampleToZoom = this.features.filter(
-      ({ properties }) => el.innerHTML.trim() === properties.name
-    );
-    const { coordinates } = sampleToZoom[0].properties;
-    const Coordinates = coordinates.split(',');
-    this.theMap.flyTo({
-      zoom: 9,
-      speed: 1.5,
-      curve: 2,
-      center: [parseFloat(Coordinates[1]), parseFloat(Coordinates[0])],
-      essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-    });
-
-    this.sample = sampleToZoom[0].properties;
-
-    this.name = this.sample.name;
-    this.pics = this.sample.Images
-      ? [
-          ...this.sample.Images.map((image) =>
-            image.width <= image.height
-              ? { ...image, newClass: true }
-              : { ...image, newClass: false }
-          ),
-        ]
-      : null;
-    this.description = this.sample.description;
-    this.Location = this.sample.Location;
-    this.Chapter = this.sample.Chapter;
-    this.Notes = this.sample.Notes;
-    this.Shortcuts =
-      this.sample.Shortcuts === undefined
-        ? this.sample.Shortcuts?.json()
-        : this.sample.Shortcuts;
-    this.title = this.Location + ' - ' + this.Chapter;
+  mapData = {
+    title :"map title",
+    description : "map description"
   }
-
-  set sample(value) {
-    if (value) {
-      this._sample = value;
-      location.hash = '#' + value.id;
-    } else {
-      location.hash = '';
-    }
-  }
-
-  get sample() {
-    return this._sample;
-  }
-
-  givSamples() {
-    return this.samples;
-  }
-
   ngOnInit(): void {
-    const model = document.querySelector('.model');
-    const btnModel = document.querySelector('.btn-model');
-    btnModel.addEventListener('click', function () {
-      if (this.classList.contains('open') === true) {
-        document.querySelector('.prev').classList.add('show');
-        document.querySelector('.next').classList.add('show');
-        this.classList.remove('open');
-        model.classList.remove('open');
-      } else {
-        this.classList.add('open');
-        model.classList.add('open');
-        document.querySelector('.prev').classList.remove('show');
-        document.querySelector('.next').classList.remove('show');
-      }
-    });
-
     this.theMap = new mapboxgl.Map({
       accessToken:
         'pk.eyJ1IjoiYXRsYXNtZWRsaXEiLCJhIjoiY2tpbXgzNW5qMHhhcjJ5cGtydHpkNnJqYyJ9.vfietFuvTA8S1vaGlm3CUQ',
@@ -196,6 +132,15 @@ export class TheMapComponent implements OnInit {
       minZoom: 5,
       maxZoom: 14,
     });
+    // this.modelMap.comunicatedData(this.name);
+
+
+
+
+
+
+
+
 
     this.theMap.on('style.load', () => {
       this.samples
@@ -324,21 +269,26 @@ export class TheMapComponent implements OnInit {
             popup.remove();
           });
           this.theMap.on('click', this.LAYER_NAME, (e) => {
+            // console.log(e);
             this.sample = e.features[0].properties;
             this.sample = {
               ...this.sample,
               Images: [
                 ...JSON.parse(this.sample.Images).map((image) =>
-                  image.width <= image.height
-                    ? { ...image, newClass: true }
-                    : { ...image, newClass: false }
+                image.width <= image.height
+                ? { ...image, newClass: true }
+                : { ...image, newClass: false }
                 ),
               ],
             };
+            // this.api.comunicatedData(this.sample.name);
+            this.modelMap.comunicatedData(this.sample.name);
             this.accordion = this.sample.accordion;
-            this.name = this.sample.name;
+            // this.name = this.sample.name;
+            console.log( this.sample.name);
             this.pics = this.sample.Images;
-            this.description = this.sample.description;
+      this.description = this.sample.description;
+            // this.api.comunicatedData(this.sample.description);
             this.Location = this.sample.Location;
             this.Chapter = this.sample.Chapter;
             this.Notes = this.sample.Notes;
@@ -357,7 +307,7 @@ export class TheMapComponent implements OnInit {
             var images = [];
             for (let i = 0; i < items.length; i++) {
               if (i > 0 && i % 4 === 0) group++;
-              if (i === 0) console.log(items[i]);
+              // if (i === 0) console.log(items[i]);
               if (!Array.isArray(images[group])) images[group] = [];
               images[group].push(items[i]);
             }
@@ -373,4 +323,67 @@ export class TheMapComponent implements OnInit {
         });
     });
   }
+
+
+
+
+
+
+
+
+
+
+    // clicking(el) {
+  //   const sampleToZoom = this.features.filter(
+  //     ({ properties }) => el.innerHTML.trim() === properties.name
+  //   );
+  //   const { coordinates } = sampleToZoom[0].properties;
+  //   const Coordinates = coordinates.split(',');
+  //   this.theMap.flyTo({
+  //     zoom: 9,
+  //     speed: 1.5,
+  //     curve: 2,
+  //     center: [parseFloat(Coordinates[1]), parseFloat(Coordinates[0])],
+  //     essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+  //   });
+
+  //   this.sample = sampleToZoom[0].properties;
+
+  //   this.name = this.sample.name;
+  //   this.pics = this.sample.Images
+  //     ? [
+  //         ...this.sample.Images.map((image) =>
+  //           image.width <= image.height
+  //             ? { ...image, newClass: true }
+  //             : { ...image, newClass: false }
+  //         ),
+  //       ]
+  //     : null;
+  //   this.description = this.sample.description;
+  //   this.Location = this.sample.Location;
+  //   this.Chapter = this.sample.Chapter;
+  //   this.Notes = this.sample.Notes;
+  //   this.Shortcuts =
+  //     this.sample.Shortcuts === undefined
+  //       ? this.sample.Shortcuts?.json()
+  //       : this.sample.Shortcuts;
+  //   this.title = this.Location + ' - ' + this.Chapter;
+  // }
+
+  // set sample(value) {
+  //   if (value) {
+  //     this._sample = value;
+  //     location.hash = '#' + value.id;
+  //   } else {
+  //     location.hash = '';
+  //   }
+  // }
+
+  // get sample() {
+  //   return this._sample;
+  // }
+
+  // givSamples() {
+  //   return this.samples;
+  // }
 }
