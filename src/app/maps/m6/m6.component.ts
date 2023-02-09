@@ -193,11 +193,9 @@ export class M6Component implements OnInit {
     });
 
     this.theMap = new mapboxgl.Map({
-      // accessToken: 'pk.eyJ1IjoicHl4aWNvbSIsImEiOiJjbDJobWF2NWUwZmZhM2Vxd3h3dnRqdXJsIn0.Y1IhxLMO5eUzan6uIOyx7A',
       accessToken:
         'pk.eyJ1IjoiYXRsYXNtZWRsaXEiLCJhIjoiY2tpbXgzNW5qMHhhcjJ5cGtydHpkNnJqYyJ9.vfietFuvTA8S1vaGlm3CUQ',
       container: this.mapEl.nativeElement,
-      // style: 'mapbox://styles/pyxicom/cl2hmgdl4006114pkays08nr0',
       style: 'mapbox://styles/atlasmedliq/clbl6u8pr004o14mosduath7j',
       zoom: 5.25,
       center: [-6.25, 32.25],
@@ -266,7 +264,6 @@ export class M6Component implements OnInit {
                   }
                 : null;
 
-              // this.accordion = this.sample.accordion;
               this.name = this.sample.name;
               this.pics = this.sample.Images;
               this.description = this.sample.description;
@@ -450,6 +447,4 @@ export class M6Component implements OnInit {
         });
     });
   }
-
-  // ngOnInit(): void {}
 }

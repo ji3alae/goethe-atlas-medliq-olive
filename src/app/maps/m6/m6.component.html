@@ -1,6 +1,6 @@
-<app-seclayout (info)='info = $event; sample = $event ? null : sample' [hideHeader]='!!sample'>
+<app-m6-seclayout (info)='info = $event; sample = $event ? null : sample' [hideHeader]='!!sample'>
   <div class='map content'>
-    <app-info [class.open]='!!info' (close)='info = false'></app-info>
+    <app-m6-info [class.open]='!!info' (close)='info = false'></app-m6-info>
     <div class="product slide-content">
       <div class="slider-wrap">
         <div class="slider-main">
@@ -67,4 +67,4 @@
     </div>
   </div>
   <h1 class='header-title'>Olive Growing in Morocco</h1>
-</app-seclayout>
+</app-m6-seclayout>
