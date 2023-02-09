@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import * as marked from 'marked';
 import { M6Service } from '../m6.service';
 @Component({
-  selector: 'app-info',
+  selector: 'app-m6-info',
   templateUrl: './m6.info.component.html',
   styleUrls: ['./m6.info.component.less']
 })
